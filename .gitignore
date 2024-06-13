@@ -20,3 +20,6 @@
 # Go workspace file
 go.work
 go.work.sum
+/.idea/modules.xml
+/.idea/omsv2.iml
+/.idea/vcs.xml
