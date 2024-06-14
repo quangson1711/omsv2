@@ -17,7 +17,6 @@ func main() {
 	handler.registerRoutes(mux)
 
 	log.Print("Starting server on ", httpAddr)
-
 	if err := http.ListenAndServe(httpAddr, mux); err != nil {
 		log.Fatal(err)
 	}
