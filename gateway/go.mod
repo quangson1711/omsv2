@@ -1,3 +1,5 @@
-module github.com/quangson1711/gateway
+module gateway
 
 go 1.21
+
+require github.com/joho/godotenv v1.5.1

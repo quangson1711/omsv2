@@ -1,3 +1,3 @@
-module github.com/quangson1711/payments
+module payments
 
 go 1.21

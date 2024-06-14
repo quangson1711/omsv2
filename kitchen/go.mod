@@ -1,3 +1,3 @@
-module github.com/quangson1711/kitchen
+module kitchen
 
 go 1.21
