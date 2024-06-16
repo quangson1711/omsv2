@@ -2,6 +2,7 @@ package main
 
 import (
 	"common"
+	_ "github.com/joho/godotenv/autoload"
 	"log"
 	"net/http"
 )
