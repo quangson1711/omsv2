@@ -1,13 +1,16 @@
 package main
 
-import "net/http"
+import (
+	pb "common/api"
+	"net/http"
+)
 
 type handler struct {
-	//gateway
+	client pb.OrderServiceClient
 }
 
-func NewHandler() *handler {
-	return &handler{}
+func NewHandler(client pb.OrderServiceClient) *handler {
+	return &handler{client}
 }
 
 func (h *handler) registerRoutes(mux *http.ServeMux) {
@@ -15,5 +18,5 @@ func (h *handler) registerRoutes(mux *http.ServeMux) {
 }
 
 func (h *handler) HandleCreateOrder(writer http.ResponseWriter, request *http.Request) {
-
+	//TODO
 }
