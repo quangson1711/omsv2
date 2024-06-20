@@ -1,6 +1,7 @@
 package main
 
 import (
+	"common"
 	pb "common/api"
 	"net/http"
 )
@@ -18,5 +19,15 @@ func (h *handler) registerRoutes(mux *http.ServeMux) {
 }
 
 func (h *handler) HandleCreateOrder(writer http.ResponseWriter, request *http.Request) {
-	//TODO
+	customerID := request.PathValue("customerID")
+
+	var items []*pb.ItemsWithQuantity
+	if err := common.ReadJSON(request, &items); err != nil {
+		common.WirteError(writer, http.StatusBadRequest, err.Error())
+	}
+
+	h.client.CreateOrder(request.Context(), &pb.CreateOrderRequest{
+		CustomerID: customerID,
+		Items:      items,
+	})
 }
